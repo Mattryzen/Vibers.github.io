@@ -3,8 +3,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #f0f4f8;
-    color: #333;
+    background-color: #181818;
+    color: #fff;
 }
 
 /* Header */
@@ -39,7 +39,7 @@ header h1 {
 /* Search Bar */
 #search-bar {
     position: absolute;
-    left: 20px; /* Position the search bar at the left edge */
+    left: 20px;
     top: 50%;
     transform: translateY(-50%);
     width: 200px;
@@ -56,12 +56,7 @@ header h1 {
 
 /* Main Content */
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 80vh;
-    text-align: center;
+    padding: 20px;
 }
 
 ul {
@@ -69,14 +64,44 @@ ul {
     padding: 0;
 }
 
-li {
+.track-item {
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
+    background-color: #242424;
+    padding: 10px;
+    border-radius: 8px;
 }
 
-audio {
+.track-info {
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+.track-title {
+    margin: 0;
+    font-size: 1.1em;
+    color: #fff;
+}
+
+.track-artist {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.track-duration {
+    color: #ccc;
+    font-size: 0.9em;
+    margin-right: 20px;
+}
+
+/* Audio Player */
+.audio-player {
+    width: 300px; /* Set a fixed width for all players */
+    height: 30px; /* Set a consistent height for all players */
     outline: none;
-    width: 300px;
-    margin-top: 10px;
+    margin: 0;
 }
 
 /* Footer */
