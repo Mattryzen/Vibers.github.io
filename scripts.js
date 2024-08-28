@@ -7,14 +7,15 @@ const tracks = [
     // Add more tracks here
 ];
 
-// Function to sort tracks alphabetically by title
+// Sort tracks alphabetically by title
 tracks.sort((a, b) => a.title.localeCompare(b.title));
 
-// Function to generate the HTML for each track and add to the page
-function displayTracks() {
+// Function to display tracks
+function displayTracks(filteredTracks = tracks) {
     const musicList = document.getElementById("music-list");
+    musicList.innerHTML = ""; // Clear existing tracks
 
-    tracks.forEach(track => {
+    filteredTracks.forEach(track => {
         const listItem = document.createElement("li");
 
         const trackTitle = document.createElement("h3");
@@ -30,5 +31,12 @@ function displayTracks() {
     });
 }
 
-// Call the function to display tracks
+// Function to search tracks
+function searchTracks() {
+    const query = document.getElementById("search-bar").value.toLowerCase();
+    const filteredTracks = tracks.filter(track => track.title.toLowerCase().includes(query));
+    displayTracks(filteredTracks);
+}
+
+// Initial display of tracks
 displayTracks();

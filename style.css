@@ -12,13 +12,46 @@ header {
     background-color: #1e3a8a;
     color: #fff;
     padding: 20px;
-    text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+#header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
 }
 
 header h1 {
     margin: 0;
     font-size: 2em;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* Search Bar */
+#search-bar {
+    position: absolute;
+    left: 20px; /* Position the search bar at the left edge */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+    outline: none;
+}
+
+#search-bar:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Main Content */
