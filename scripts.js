@@ -3,7 +3,7 @@ const tracks = [
     { title: "A Song", url: "https://www.dropbox.com/s/example1.mp3?dl=1" },
     { title: "B Song", url: "https://www.dropbox.com/s/example2.mp3?dl=1" },
     { title: "Hall of Fame - The Script", url: "https://www.dropbox.com/scl/fi/20cx7ztdcccnvz3svu3av/The-Script-Hall-of-Fame.mp3?rlkey=up2bup4fywiv9m9e470y535kr&st=vl2flm0q&dl=1" },
-    { title: "Kompa - Rarin", url: "https://www.dropbox.com/scl/fi/2zvn8e9ysgtz5ro47oyyy/Rarin-Kompa.mp3?dl=1" },
+    { title: "Kompa - Rarin", url: "https://www.dropbox.com/scl/fi/2zvn8e9ysgtz5ro47oyyy/Rarin-Kompa.mp3?rlkey=335nt137qrpsanoavkl77etos&st=5pt7k619&dl=1" },
     // Add more tracks here
 ];
 
