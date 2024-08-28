@@ -7,29 +7,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Header -->
     <header>
         <div id="header-content">
-            <input type="text" id="search-bar" placeholder="Search..." onkeyup="searchTracks()">
             <h1>Vibers</h1>
+            <input type="text" id="search-bar" placeholder="Search..." onkeyup="searchTracks()">
         </div>
     </header>
-
-    <!-- Main Content -->
     <main>
-        <div>
-            <h2>Music Library</h2>
-            <ul id="music-list"></ul> <!-- List where tracks will be inserted -->
-        </div>
+        <ul id="music-list">
+            <!-- Music tracks will be dynamically generated here -->
+        </ul>
     </main>
 
-    <!-- Footer -->
+    <!-- Modal Popup -->
+    <div id="audio-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-audio-info">
+                <h2 id="modal-track-title"></h2>
+                <p id="modal-track-artist"></p>
+                <audio id="modal-audio-player" controls></audio>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2024 Vibers. All rights reserved.</p>
     </footer>
-
-    <!-- Link to JavaScript file -->
     <script src="scripts.js"></script>
 </body>
 </html>

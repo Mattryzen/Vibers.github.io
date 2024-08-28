@@ -43,21 +43,45 @@ function displayTracks(filteredTracks = tracks) {
         trackDuration.textContent = track.duration;
         trackDuration.className = "track-duration";
 
-        const audioPlayer = document.createElement("audio");
-        audioPlayer.controls = true;
-        audioPlayer.src = track.url;
-        audioPlayer.className = "audio-player";
+        listItem.appendChild(trackInfo);
+        listItem.appendChild(trackDuration);
 
         trackInfo.appendChild(trackTitle);
         trackInfo.appendChild(trackArtist);
 
-        listItem.appendChild(trackInfo);
-        listItem.appendChild(trackDuration);
-        listItem.appendChild(audioPlayer);
+        // Add event listener to open modal on click
+        listItem.addEventListener("click", () => openModal(track));
 
         musicList.appendChild(listItem);
     });
 }
+
+// Function to open modal with selected track details
+function openModal(track) {
+    const modal = document.getElementById("audio-modal");
+    const modalTitle = document.getElementById("modal-track-title");
+    const modalArtist = document.getElementById("modal-track-artist");
+    const modalAudio = document.getElementById("modal-audio-player");
+
+    modalTitle.textContent = track.title;
+    modalArtist.textContent = track.artist;
+    modalAudio.src = track.url;
+
+    modal.style.display = "flex";
+}
+
+// Close modal when the close button is clicked
+document.querySelector(".close").addEventListener("click", () => {
+    document.getElementById("audio-modal").style.display = "none";
+});
+
+// Close modal when clicking outside of the modal content
+window.addEventListener("click", (event) => {
+    const modal = document.getElementById("audio-modal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
 
 // Function to search tracks
 function searchTracks() {
