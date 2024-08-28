@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     margin: 0;
     padding: 0;
@@ -6,6 +7,7 @@ body {
     color: #333;
 }
 
+/* Header */
 header {
     background-color: #1e3a8a;
     color: #fff;
@@ -19,20 +21,32 @@ header h1 {
     font-size: 2em;
 }
 
+/* Main Content */
 main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 80vh;
     text-align: center;
 }
 
-audio {
-    outline: none;
-    margin-top: 20px;
-    width: 300px;
+ul {
+    list-style-type: none;
+    padding: 0;
 }
 
+li {
+    margin-bottom: 20px;
+}
+
+audio {
+    outline: none;
+    width: 300px;
+    margin-top: 10px;
+}
+
+/* Footer */
 footer {
     background-color: #1e3a8a;
     color: #fff;
