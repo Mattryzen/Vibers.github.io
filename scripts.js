@@ -91,19 +91,13 @@ function openModal(track) {
     const modal = document.getElementById("audio-modal");
     const modalTitle = document.getElementById("modal-track-title");
     const modalArtist = document.getElementById("modal-track-artist");
-    const modalAudio = document.getElementById("modal-audio-player");
-    const nowPlayingAudio = document.getElementById("now-playing-audio");
+    const audioPlayer = document.getElementById("now-playing-audio"); // Single audio player
 
     modalTitle.textContent = track.title;
     modalArtist.textContent = track.artist;
 
-    // Sync audio sources
-    modalAudio.src = track.url;
-    nowPlayingAudio.src = track.url;
-
-    // Play in both modal and now playing box
-    modalAudio.play();
-    nowPlayingAudio.play();
+    audioPlayer.src = track.url;
+    audioPlayer.play();
 
     modal.style.display = "flex";
 
@@ -122,18 +116,6 @@ function showNowPlaying(track) {
 
     nowPlaying.style.display = "flex";
 }
-
-// Sync playback between modal and "Now Playing" box
-const modalAudioPlayer = document.getElementById("modal-audio-player");
-const nowPlayingAudioPlayer = document.getElementById("now-playing-audio");
-
-modalAudioPlayer.addEventListener('timeupdate', () => {
-    nowPlayingAudioPlayer.currentTime = modalAudioPlayer.currentTime;
-});
-
-nowPlayingAudioPlayer.addEventListener('timeupdate', () => {
-    modalAudioPlayer.currentTime = nowPlayingAudioPlayer.currentTime;
-});
 
 // Ensure audio continues playing even if modal is closed
 document.querySelector(".close").addEventListener("click", () => {
