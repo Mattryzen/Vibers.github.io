@@ -86,18 +86,31 @@ function displayTracks(filteredTracks = tracks) {
     });
 }
 
+let isPlaying = false;  // Track whether the audio is currently playing
+let currentTrack = null;  // Track the current song being played
+
 // Function to open modal with selected track details
 function openModal(track) {
     const modal = document.getElementById("audio-modal");
     const modalTitle = document.getElementById("modal-track-title");
     const modalArtist = document.getElementById("modal-track-artist");
-    const audioPlayer = document.getElementById("now-playing-audio"); // Single audio player
+    const audioPlayer = document.getElementById("now-playing-audio");
 
     modalTitle.textContent = track.title;
     modalArtist.textContent = track.artist;
 
-    audioPlayer.src = track.url;
-    audioPlayer.play();
+    // Check if the same track is being clicked again
+    if (currentTrack !== track.url) {
+        currentTrack = track.url;
+        audioPlayer.src = track.url;
+        audioPlayer.currentTime = 0;  // Reset time only if a new track is selected
+    }
+
+    // Play the audio if it was already playing or if it's a new track
+    if (!isPlaying || currentTrack !== track.url) {
+        audioPlayer.play();
+        isPlaying = true;
+    }
 
     modal.style.display = "flex";
 
@@ -117,6 +130,23 @@ function showNowPlaying(track) {
     nowPlaying.style.display = "flex";
 }
 
+// Sync playback control between the modal and "Now Playing" bar
+document.getElementById("modal-audio-player").addEventListener("play", () => {
+    document.getElementById("now-playing-audio").play();
+});
+
+document.getElementById("modal-audio-player").addEventListener("pause", () => {
+    document.getElementById("now-playing-audio").pause();
+});
+
+document.getElementById("now-playing-audio").addEventListener("play", () => {
+    document.getElementById("modal-audio-player").play();
+});
+
+document.getElementById("now-playing-audio").addEventListener("pause", () => {
+    document.getElementById("modal-audio-player").pause();
+});
+
 // Ensure audio continues playing even if modal is closed
 document.querySelector(".close").addEventListener("click", () => {
     document.getElementById("audio-modal").style.display = "none";
@@ -129,7 +159,6 @@ window.addEventListener("click", (event) => {
         modal.style.display = "none";
     }
 });
-
 
 // Function to search tracks
 function searchTracks() {
