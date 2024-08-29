@@ -3,14 +3,44 @@ const tracks = [
     { 
         title: "Hall of Fame", 
         artist: "The Script", 
-        duration: "1:47",
+        duration: "3:54",
         url: "https://www.dropbox.com/scl/fi/20cx7ztdcccnvz3svu3av/The-Script-Hall-of-Fame.mp3?rlkey=up2bup4fywiv9m9e470y535kr&st=vl2flm0q&dl=1" 
     },
     { 
         title: "Kompa", 
         artist: "Rarin", 
-        duration: "2:21",  
+        duration: "1:43",  
         url: "https://www.dropbox.com/scl/fi/2zvn8e9ysgtz5ro47oyyy/Rarin-Kompa.mp3?rlkey=335nt137qrpsanoavkl77etos&st=5pt7k619&dl=1" 
+    },
+    { 
+        title: "Forever", 
+        artist: "Andromedik", 
+        duration: "4:59",  
+        url: "https://www.dropbox.com/scl/fi/uiyurcsiltstwap4unw4q/Forever.mp3?rlkey=sdjij2cini1lzq1lwu0ffnw3g&st=fgqzyh1u&dl=1" 
+    },
+    { 
+        title: "30", 
+        artist: "Fukkit", 
+        duration: "2:41",  
+        url: "https://www.dropbox.com/scl/fi/b2aytkmkytbxgu2jlui1x/Fukkit-30-Prod.-CaptainCrunch.mp3?rlkey=l9qqoh6c04468zm36gzawzk6l&st=r6su9tib&dl=1" 
+    },
+    { 
+        title: "So What", 
+        artist: "Rarin", 
+        duration: "3:24",  
+        url: "https://www.dropbox.com/scl/fi/zby0c1pm3s77jm6yc9j2n/Rarin-SO-WHAT-feat.-BrxkenBxy-Official-Lyric-Video.mp3?rlkey=fizkqzndredbg64gwcmw27t3l&st=sxugopsc&dl=1" 
+    },
+    { 
+        title: "Ex List", 
+        artist: "Rarin , Tommy Ice", 
+        duration: "2:53",  
+        url: "https://www.dropbox.com/scl/fi/qav48nm5w7a9vywktym88/Rarin-Tommy-Ice-Ex-List-Official-Visualizer.mp3?rlkey=49o0rehdsm04xouetw25aimvy&st=coh2onpn&dl=1" 
+    },
+    { 
+        title: "2 Dangerous", 
+        artist: "Rarin , Lil Story", 
+        duration: "2:33",  
+        url: "https://www.dropbox.com/scl/fi/ca7rdvv3z8lmtcyylrhe8/Rarin-Lil-Story-2-Dangerous-Official-Visualizer.mp3?rlkey=b6qu5vr7rz846r91mdazjatfs&st=ji9s9l2b&dl=1" 
     },
    
     // Add more tracks here
