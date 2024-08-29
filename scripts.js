@@ -96,8 +96,26 @@ function openModal(track) {
     modalTitle.textContent = track.title;
     modalArtist.textContent = track.artist;
     modalAudio.src = track.url;
+    modalAudio.play();
 
     modal.style.display = "flex";
+
+    // Show "Now Playing" box
+    showNowPlaying(track);
+}
+
+// Function to show the "Now Playing" box
+function showNowPlaying(track) {
+    const nowPlaying = document.getElementById("now-playing");
+    const nowPlayingTitle = document.getElementById("now-playing-title");
+    const nowPlayingArtist = document.getElementById("now-playing-artist");
+    const nowPlayingAudio = document.getElementById("now-playing-audio");
+
+    nowPlayingTitle.textContent = track.title;
+    nowPlayingArtist.textContent = track.artist;
+    nowPlayingAudio.src = track.url;
+
+    nowPlaying.style.display = "flex";
 }
 
 // Close modal when the close button is clicked
