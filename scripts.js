@@ -95,6 +95,7 @@ function openModal(track) {
     const modalTitle = document.getElementById("modal-track-title");
     const modalArtist = document.getElementById("modal-track-artist");
     const audioPlayer = document.getElementById("now-playing-audio");
+    const modalSeekBar = document.getElementById("modal-seek-bar");
 
     modalTitle.textContent = track.title;
     modalArtist.textContent = track.artist;
@@ -116,6 +117,18 @@ function openModal(track) {
 
     // Show "Now Playing" box
     showNowPlaying(track);
+
+    // Synchronize the seek bar with the audio player
+    audioPlayer.addEventListener("timeupdate", () => {
+        const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        modalSeekBar.value = progress;
+    });
+
+    // Allow seeking in the track via the modal's seek bar
+    modalSeekBar.addEventListener("input", () => {
+        const seekTo = (modalSeekBar.value / 100) * audioPlayer.duration;
+        audioPlayer.currentTime = seekTo;
+    });
 }
 
 // Function to show the "Now Playing" box

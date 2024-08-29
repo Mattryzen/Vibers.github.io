@@ -146,6 +146,32 @@ ul {
     cursor: pointer;
 }
 
+/* Modal Seek Bar */
+#modal-seek-bar {
+    width: 100%;
+    margin-top: 10px;
+    background: #1e3a8a;
+    appearance: none;
+    height: 5px;
+}
+
+#modal-seek-bar::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#modal-seek-bar::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
 /* Now Playing Box */
 #now-playing {
     position: fixed;

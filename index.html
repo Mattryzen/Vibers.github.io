@@ -19,17 +19,19 @@
         </ul>
     </main>
 
-    <!-- Modal Popup -->
-    <div id="audio-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="modal-audio-info">
-                <h2 id="modal-track-title"></h2>
-                <p id="modal-track-artist"></p>
-                <audio id="modal-audio-player" controls></audio>
-            </div>
-        </div>
+    <!-- Modal Content -->
+<div id="audio-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-track-title"></h2>
+        <p id="modal-track-artist"></p>
+        <audio id="modal-audio-player" controls>
+            <!-- Audio source will be set dynamically -->
+        </audio>
+        <!-- Seek Bar -->
+        <input type="range" id="modal-seek-bar" value="0" min="0" max="100">
     </div>
+</div>
 
     <!-- Now Playing Box -->
     <div id="now-playing">
