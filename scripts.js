@@ -92,11 +92,18 @@ function openModal(track) {
     const modalTitle = document.getElementById("modal-track-title");
     const modalArtist = document.getElementById("modal-track-artist");
     const modalAudio = document.getElementById("modal-audio-player");
+    const nowPlayingAudio = document.getElementById("now-playing-audio");
 
     modalTitle.textContent = track.title;
     modalArtist.textContent = track.artist;
+
+    // Sync audio sources
     modalAudio.src = track.url;
+    nowPlayingAudio.src = track.url;
+
+    // Play in both modal and now playing box
     modalAudio.play();
+    nowPlayingAudio.play();
 
     modal.style.display = "flex";
 
@@ -109,16 +116,26 @@ function showNowPlaying(track) {
     const nowPlaying = document.getElementById("now-playing");
     const nowPlayingTitle = document.getElementById("now-playing-title");
     const nowPlayingArtist = document.getElementById("now-playing-artist");
-    const nowPlayingAudio = document.getElementById("now-playing-audio");
 
     nowPlayingTitle.textContent = track.title;
     nowPlayingArtist.textContent = track.artist;
-    nowPlayingAudio.src = track.url;
 
     nowPlaying.style.display = "flex";
 }
 
-// Close modal when the close button is clicked
+// Sync playback between modal and "Now Playing" box
+const modalAudioPlayer = document.getElementById("modal-audio-player");
+const nowPlayingAudioPlayer = document.getElementById("now-playing-audio");
+
+modalAudioPlayer.addEventListener('timeupdate', () => {
+    nowPlayingAudioPlayer.currentTime = modalAudioPlayer.currentTime;
+});
+
+nowPlayingAudioPlayer.addEventListener('timeupdate', () => {
+    modalAudioPlayer.currentTime = nowPlayingAudioPlayer.currentTime;
+});
+
+// Ensure audio continues playing even if modal is closed
 document.querySelector(".close").addEventListener("click", () => {
     document.getElementById("audio-modal").style.display = "none";
 });
@@ -130,6 +147,7 @@ window.addEventListener("click", (event) => {
         modal.style.display = "none";
     }
 });
+
 
 // Function to search tracks
 function searchTracks() {
