@@ -180,5 +180,24 @@ function searchTracks() {
     displayTracks(filteredTracks);
 }
 
+// JavaScript to handle dropdown toggle on click or touch
+document.querySelector('.dropbtn').addEventListener('click', function() {
+    const dropdown = this.parentElement;
+    dropdown.classList.toggle('show');
+});
+
+// Close the dropdown if the user clicks outside of it
+window.addEventListener('click', function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        const dropdowns = document.getElementsByClassName('dropdown');
+        for (let i = 0; i < dropdowns.length; i++) {
+            const openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+});
+
 // Initial display of tracks
 displayTracks();
