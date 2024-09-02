@@ -7,75 +7,52 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Login Page -->
-    <div id="login-page">
-        <h1>Connexion</h1>
-        <input type="text" id="login-username" placeholder="Pseudo" required>
-        <input type="password" id="login-password" placeholder="Mot de passe" required>
-        <button id="login-button">Se connecter</button>
-        <p>Pas encore de compte? <a href="#" id="go-to-register">Créer un compte</a></p>
-    </div>
-
-    <!-- Register Page -->
-    <div id="register-page" style="display:none;">
-        <h1>Inscription</h1>
-        <input type="text" id="register-username" placeholder="Pseudo" required>
-        <input type="password" id="register-password" placeholder="Mot de passe" required>
-        <button id="register-button">Créer un compte</button>
-        <p>Déjà un compte? <a href="#" id="go-to-login">Se connecter</a></p>
-    </div>
-
-    <!-- Main Content -->
-    <div id="main-content" style="display:none;">
-        <!-- Your existing content goes here -->
-        <header>
-            <div id="header-content">
-                <h1>Vibers</h1>
-                <input type="text" id="search-bar" placeholder="Search..." onkeyup="searchTracks()">
-                <div class="dropdown">
-                    <button class="dropbtn">☰</button>
-                    <div class="dropdown-content">
-                        <a href="#">Compte</a>
-                        <a href="#">Playlist</a>
-                    </div>
+    <header>
+        <div id="header-content">
+            <h1>Vibers</h1>
+            <input type="text" id="search-bar" placeholder="Search..." onkeyup="searchTracks()">
+            <div class="dropdown">
+                <button class="dropbtn">☰</button>
+                <div class="dropdown-content">
+                    <a href="#">Compte</a>
+                    <a href="#">Playlist</a>
                 </div>
             </div>
-        </header>
-        
-        <main>
-            <ul id="music-list">
-                <!-- Music tracks will be dynamically generated here -->
-            </ul>
-        </main>
-
-        <!-- Modal Content -->
-        <div id="audio-modal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2 id="modal-track-title"></h2>
-                <p id="modal-track-artist"></p>
-                <audio id="modal-audio-player" controls>
-                    <!-- Audio source will be set dynamically -->
-                </audio>
-                <!-- Seek Bar -->
-                <input type="range" id="modal-seek-bar" value="0" min="0" max="100">
-            </div>
         </div>
+    </header>
+    
+    <main>
+        <ul id="music-list">
+            <!-- Music tracks will be dynamically generated here -->
+        </ul>
+    </main>
 
-        <!-- Now Playing Box -->
-        <div id="now-playing">
-            <div id="now-playing-info">
-                <h3 id="now-playing-title"></h3>
-                <p id="now-playing-artist"></p>
-            </div>
-            <audio id="now-playing-audio" controls></audio>
+    <!-- Modal Content -->
+<div id="audio-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-track-title"></h2>
+        <p id="modal-track-artist"></p>
+        <audio id="modal-audio-player" controls>
+            <!-- Audio source will be set dynamically -->
+        </audio>
+        <!-- Seek Bar -->
+        <input type="range" id="modal-seek-bar" value="0" min="0" max="100">
+    </div>
+</div>
+
+    <!-- Now Playing Box -->
+    <div id="now-playing">
+        <div id="now-playing-info">
+            <h3 id="now-playing-title"></h3>
+            <p id="now-playing-artist"></p>
         </div>
-
-        <footer>
-            <p>&copy; 2024 Vibers. All rights reserved.</p>
-        </footer>
+        <audio id="now-playing-audio" controls></audio>
     </div>
 
+    <footer>
+        <p>&copy; 2024 Vibers. All rights reserved.</p>
+    </footer>
     <script src="scripts.js"></script>
 </body>
 </html>
