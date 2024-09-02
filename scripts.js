@@ -207,3 +207,67 @@ window.addEventListener('click', function(event) {
 
 // Initial display of tracks
 displayTracks();
+
+// Stockage des utilisateurs (pour la démo, on utilise localStorage)
+let users = JSON.parse(localStorage.getItem('users')) || [];
+
+// Gestion de la navigation entre les pages
+document.getElementById("go-to-register").addEventListener("click", () => {
+    document.getElementById("login-page").style.display = "none";
+    document.getElementById("register-page").style.display = "flex";
+});
+
+document.getElementById("go-to-login").addEventListener("click", () => {
+    document.getElementById("register-page").style.display = "none";
+    document.getElementById("login-page").style.display = "flex";
+});
+
+// Inscription
+document.getElementById("register-button").addEventListener("click", () => {
+    const username = document.getElementById("register-username").value;
+    const password = document.getElementById("register-password").value;
+
+    if (username && password) {
+        // Vérifier si l'utilisateur existe déjà
+        const existingUser = users.find(user => user.username === username);
+
+        if (existingUser) {
+            alert("Ce pseudo est déjà pris.");
+        } else {
+            // Ajouter le nouvel utilisateur
+            users.push({ username, password });
+            localStorage.setItem('users', JSON.stringify(users));
+            alert("Compte créé avec succès !");
+            document.getElementById("register-page").style.display = "none";
+            document.getElementById("login-page").style.display = "flex";
+        }
+    } else {
+        alert("Veuillez remplir tous les champs.");
+    }
+});
+
+// Connexion
+document.getElementById("login-button").addEventListener("click", () => {
+    const username = document.getElementById("login-username").value;
+    const password = document.getElementById("login-password").value;
+
+    if (username && password) {
+        // Vérifier si les identifiants sont corrects
+        const user = users.find(user => user.username === username && user.password === password);
+
+        if (user) {
+            alert("Connexion réussie !");
+            document.getElementById("login-page").style.display = "none";
+            document.getElementById("main-content").style.display = "block";
+        } else {
+            alert("Identifiants incorrects.");
+        }
+    } else {
+        alert("Veuillez remplir tous les champs.");
+    }
+});
+
+// Afficher la liste des musiques dès que l'utilisateur est connecté
+if (document.getElementById("main-content").style.display === "block") {
+    displayTracks();
+}
