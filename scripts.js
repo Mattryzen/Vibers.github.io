@@ -42,6 +42,12 @@ const tracks = [
         duration: "2:33",  
         url: "https://www.dropbox.com/scl/fi/ca7rdvv3z8lmtcyylrhe8/Rarin-Lil-Story-2-Dangerous-Official-Visualizer.mp3?rlkey=b6qu5vr7rz846r91mdazjatfs&st=ji9s9l2b&dl=1" 
     },
+    { 
+        title: "Fe!n", 
+        artist: "Travis Scott", 
+        duration: "2:33",  
+        url: "https://www.dropbox.com/scl/fi/7qwied8abwu1y6gdtr5ny/Travis-Scott-FE-N-Official-Audio.mp3?rlkey=dwyyooo9ghcy3o9vurrukfvw2&st=voqkq0be&dl=1" 
+    },
    
     // Add more tracks here
 ];
