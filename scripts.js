@@ -45,7 +45,7 @@ const tracks = [
     { 
         title: "Fe!n", 
         artist: "Travis Scott", 
-        duration: "2:33",  
+        duration: "3:14",  
         url: "https://www.dropbox.com/scl/fi/7qwied8abwu1y6gdtr5ny/Travis-Scott-FE-N-Official-Audio.mp3?rlkey=dwyyooo9ghcy3o9vurrukfvw2&st=voqkq0be&dl=1" 
     },
    
